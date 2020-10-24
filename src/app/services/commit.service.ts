@@ -14,7 +14,10 @@ export class CommitService {
  	getAll(
  		user: string,
  		repo: string
- 	): Observable<Commit[]> {
- 		return this.http.get(`${config.githubPath}/repos/${user}/${repo}/commits`).pipe(pluck('result'));
+ 	): Observable<any> {
+ 		console.log("before call");
+ 		return this.http.get(
+ 			`${config.githubPath}/repos/${user}/${repo}/commits`
+ 		).pipe(pluck('result'));
  	}
 }
