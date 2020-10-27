@@ -15,9 +15,8 @@ export class CommitService {
  		user: string,
  		repo: string
  	): Observable<any> {
- 		console.log("before call");
- 		return this.http.get(
- 			`${config.githubPath}/repos/${user}/${repo}/commits`
- 		).pipe(pluck('result'));
+ 		const url = `${config.githubPath}/repos/${user}/${repo}/commits`; 
+ 		const resp = this.http.get(url);//.pipe(pluck('result'));
+ 		return resp;
  	}
 }

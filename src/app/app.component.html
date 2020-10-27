@@ -311,10 +311,10 @@
 
   <div class="card-container">
     <table>
-      <tr *ngFor="commit of listCommits">
-        <td>{{commit.sha}}</td>
-        <td><a href="{{commit.url}}">{{commit.html_url}}</a></td>
-        <td>{{commit.author.login}}</td>
+      <tr *ngFor="let commit of listCommits">
+        <td>sha:</td>
+        <td><a target="blank" href="{{commit.html_url}}">{{commit.sha}}</a></td>
+        <td>author: {{commit.author.login}}</td>
       </tr> 
     </table>
   </div>

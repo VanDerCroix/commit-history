@@ -15,13 +15,14 @@ export class AppComponent {
 	isLoadingData = false;
 
 	constructor(private commitService: CommitService) {
-	console.log("component");
 	this.isLoadingData = true;
 		this.commitService
 			.getAll(this.user, this.repo)
 			.subscribe(
 				(result) => {
 					this.listCommits = result;
+					console.log('listCommits');
+					console.log(this.listCommits);
 				}
 			);
 	}
